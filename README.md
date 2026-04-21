@@ -70,7 +70,9 @@ ORDER BY `NAME` ASC, `YEAR` DESC;
 ```
 
 <img width="1101" height="573" alt="SQL Screenshot 1" src="https://github.com/user-attachments/assets/9936ca96-397c-42e9-b758-e6a2819e1137" />
+
 <img width="1225" height="592" alt="SQL Screenshot 2" src="https://github.com/user-attachments/assets/76333dec-7607-4cd9-a3ce-f5a148d9ef0e" />
+
 <img width="1095" height="570" alt="SQL Screenshot 3" src="https://github.com/user-attachments/assets/47143d67-a731-43be-af7f-e0ab3de99de5" />
 
 ---
