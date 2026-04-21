@@ -1,8 +1,7 @@
-# Console-Games-Market-Research-Analysis
-This project involves conducting deep-market research for a console games company by analyzing historical hardware and software data. The goal is to bridge the gap between console release lifecycles and game sales performance to identify strategic release windows and regional market trends.
+# Console Games Market Research Analysis
 
 ### **Project Overview**
-As an analytics consultant, I was tasked with integrating disparate datasets—`p9-consolegames` (software sales) and `p9-consoledates` (hardware lifecycle)—to identify key market drivers. This analysis specifically evaluates how console launch timing impacts regional sales performance, particularly during high-volume retail windows.
+This project involves conducting deep-market research for a console games company by analyzing historical hardware and software data. The goal is to bridge the gap between console release lifecycles and game sales performance to identify strategic release windows and regional market trends.
 
 ### **Project Scope**
 * **Relational Integrity:** Implementing Primary/Foreign key constraints to bridge software and hardware data.
