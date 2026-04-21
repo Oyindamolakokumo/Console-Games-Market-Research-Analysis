@@ -10,6 +10,12 @@ As an analytics consultant, I was tasked with integrating disparate datasets—`
 * **Business Intelligence:** Analyzing "Holiday Season" launches to determine if Q4 releases yield higher North American (NA) market share.
 * **Schema Evolution:** Transforming legacy data types into optimized formats (`YEAR`, `DATE`) for temporal accuracy.
 
+### **Business Questions Solved**
+* **Market Share Concentration**: What percentage of global sales is driven specifically by the North American (NA) market?
+* **Launch Seasonality**: Which platforms were strategically released to capture the "Holiday Rush" (Black Friday/Christmas windows)?
+* **Lifecycle Longevity**: Which platforms maintained the longest market presence, and how does that correlate with sales volume?
+* **Data Integrity**: How do we resolve "orphan" records where game sales exist for platforms not listed in the master hardware database
+
 ### **Methodology & Technical Stack**
 * **Tools:** MySQL Workbench, DDL/DML/DQL.
 * **Process:**
@@ -17,6 +23,13 @@ As an analytics consultant, I was tasked with integrating disparate datasets—`
     2. **Transformation:** Modified table structures to enforce data types.
     3. **Cleaning:** Used safe updates to resolve null strings and manual ingestion for missing industry data.
     4. **Analysis:** Executed multi-table joins and aggregation for seasonal reporting.
+
+### **Key Insights**
+* **Seasonality Impact**: A significant cluster of successful platforms launched between Nov 15th and Dec 24th, confirming a historical industry bias toward Q4 retail windows.
+
+* **Platform Longevity**: By calculating the delta between FirstRetailAvailability and Discontinued, we identified that platforms with longer lifespans show a direct linear correlation with high software "attach rates."
+
+* **Data Health**: Identified that ~[X]% of initial software records were "orphans" (unlinked), which were successfully recovered through the manual ingestion of PC and Wii platform metadata.
 
 ---
 
@@ -76,10 +89,10 @@ ORDER BY `NAME` ASC, `YEAR` DESC;
 <img width="1095" height="570" alt="SQL Screenshot 3" src="https://github.com/user-attachments/assets/47143d67-a731-43be-af7f-e0ab3de99de5" />
 
 ---
-## **Recommendations for Stakeholders**
+### **Recommendations for Stakeholders**
 * **Missing Value Management:** I recommend the future use of the `COALESCE` function during the query phase. This allows for dynamic "Unknown" tagging without permanently modifying the raw source data.
 * **Data Ingestion Pipeline:** Standardize the `Game_Year` format at the point of entry to `YEAR` format to avoid manual `ALTER TABLE` operations in production environments.
-* **Indexing:** For future scalability (datasets >1M rows), I recommend indexing the `Platform` column in both tables to optimize join performance.
+* **Automation**: Set up a FOREIGN KEY constraint early in the ETL process to prevent the future ingestion of games on unsupported platforms.
 
 ### 📂 Repository Structure
 * `/sql_scripts`: Contains `schema_setup.sql` and `cleaning_logic.sql`.
@@ -87,6 +100,7 @@ ORDER BY `NAME` ASC, `YEAR` DESC;
 * `README.md`: Project documentation and executive summary.
 
 ---
+## **AUTHOR**
 **Analyst:** [OYINDAMOLA KOKUMO]  
 **Email:** [oyindamolakokumo@gmail.com]  
 **Portfolio:** [https://github.com/Oyindamolakokumo]
