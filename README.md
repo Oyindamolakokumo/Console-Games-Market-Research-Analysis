@@ -68,18 +68,21 @@ WHERE (MONTH(FIRSTRETAILAVAILABILITY) = 11 AND DAY(FirstRetailAvailability) BETW
 GROUP BY d.Platform, g.`RANK`, g.`NAME`, g.`YEAR`, g.`PUBLISHER` -- [Simplified for display]
 ORDER BY `NAME` ASC, `YEAR` DESC;
 ```
+
+<img width="1095" height="570" alt="SQL Screenshot 3" src="https://github.com/user-attachments/assets/47143d67-a731-43be-af7f-e0ab3de99de5" />
+
 ---
 ## **Recommendations for Stakeholders**
 * **Missing Value Management:** I recommend the future use of the `COALESCE` function during the query phase. This allows for dynamic "Unknown" tagging without permanently modifying the raw source data.
 * **Data Ingestion Pipeline:** Standardize the `Game_Year` format at the point of entry to `YEAR` format to avoid manual `ALTER TABLE` operations in production environments.
 * **Indexing:** For future scalability (datasets >1M rows), I recommend indexing the `Platform` column in both tables to optimize join performance.
 
-## 📂 Repository Structure
+### 📂 Repository Structure
 * `/sql_scripts`: Contains `schema_setup.sql` and `cleaning_logic.sql`.
 * `/data`: Reference CSV files (ConsoleGames, ConsoleDates).
 * `README.md`: Project documentation and executive summary.
 
 ---
-**Consultant:** [Your Name]  
-**LinkedIn:** [Your Profile Link]  
+**Analyst:** [OYINDAMOLA KOKUMO]  
+**Email:** [oyindamolakokumo@gmail.com]  
 **Portfolio:** [Your Portfolio Link]
